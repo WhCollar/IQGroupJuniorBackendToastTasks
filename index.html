@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./assets/plugins/air-datepicker/air-datepicker.css">
+    <script src="./assets/js/jQuery.js"></script>
+    <script src="./assets/plugins/air-datepicker/air-datepicker.js"></script>
+    <title>Deposit Calculator</title>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="d-flex align-itmes-center ">
+                <div class="header-item">
+                    <div class="logo">
+                        <img src="./assets/image/logo.svg">
+                    </div>
+                </div>
+                <div class="d-flex flex-column justify-content-center header-item text-white">
+                    Deposit Calculator
+                </div>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div class="contents">
+            <div class="title pt-5 mx-auto">
+                Деопзитный калькулятор
+            </div>
+            <div class="description mt-4 mx-auto">
+                Калькулятор депозитов позволяет рассчитать ваши доходы после внесения суммы на счет в банке по
+                опредленному тарифу.
+            </div>
+            <div class="row mt-5">
+                <div class="col-12 col-md-6">
+                    <div class="d-flex justify-content-center mb-3 mb-md-0">
+                        <div class="form-element">
+                            <label for="open-date">Дата открытия</label>
+                            <input class="datepicker-here" type="text" data-language='ru' id="open-date" datepicker model="depositData.startDate">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="d-flex justify-content-center mb-3 mb-md-0">
+                        <div class="group-form">
+                            <div class="form-element">
+                                <label for="deposite-term">Срок вклада</label>
+                                <input type="number" id="deposite-term"  validate data-min-num="1" data-max-num="60" model="depositData.term">
+                            </div>
+                            <div class="dropdown">
+                                <div class="dropdown-toggle" id="selectTermType">Месяц</div>
+                                <ul class="dropdown-menu d-none" aria-labelledby="selectTermType">
+                                    <li class="dropdown-item" data-from="1" data-up-to="60">Месяц</li>
+                                    <li class="dropdown-item" data-from="1" data-up-to="5">Год</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-12 col-md-6">
+                    <div class="d-flex justify-content-center mb-3 mb-md-0">
+                        <div class="form-element">
+                            <label for="deposite-amount">Сумма вклада</label>
+                            <input type="number" id="deposite-amount" validate data-min-num="1000" data-max-num="3000000" model="depositData.sum">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <div class="d-flex justify-content-center mb-3 mb-md-0">
+                        <div class="form-element">
+                            <label for="interest-rate">Процентная ставка, % годовых</label>
+                            <input type="number" id="interest-rate" validate data-min-num="3" data-max-num="100" model="depositData.percent">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-12 col-md-6">
+                    <div class="d-flex justify-content-center mb-3 mb-md-0">
+                        <input class="me-3" type="checkbox" data-offcanvas-conroller="replenishment-amount">
+                        Ежемесячное пополнение счёта
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="d-flex justify-content-center">
+                        <div class="form-element d-none" data-offcanvas-id="replenishment-amount">
+                            <label for="replenishment-amount">Сумма пополнения</label>
+                            <input type="number" id="replenishment-amount" validate data-min-num="0" data-max-num="3000000" model="depositData.sumAdd">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col">
+                    <div class="result-button ms-5 d-flex flex-column justify-content-center text-center" data-send-request>
+                        <div>Рассчитать</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-5">
+                <div class="col result-row pt-4 d-none">
+                    <div class="description ms-5 mb-3">Сумма к выплате</div>
+                    <div class="grand-total ms-5" id="resault"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+<script src="./script.js"></script>
+</html>

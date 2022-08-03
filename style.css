@@ -1,0 +1,163 @@
+@import "./assets/css/bootstrap-grid.min.css";
+@import "./assets/css/bootstrap-utilities.min.css";
+@import "./assets/css/fonts.css";
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+:root {
+    --header-height: 44px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+header {
+    height: var(--header-height);
+    background: #1F2229;
+}
+
+header .contents {
+    background: #1F2229;
+}
+
+input {
+    border: 0px;
+}
+
+input:focus {
+    outline: none;
+}
+
+input[type="checkbox"] {
+    width: 25px;
+    border-radius: 0px;
+    border: 1px solid black;
+}
+
+.header-item {
+    margin-right: 20px;
+}
+
+.logo {
+    margin-top: 13px;
+}
+
+.contents {
+    background: #FAF6F6;
+    max-width: 718px;
+    padding: 42px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.title {
+    font-size: 36px;
+    width: fit-content;
+}
+
+.description {
+    font-size: 12px;
+    width: fit-content;
+}
+
+.form-element {
+    display: grid;
+    width: 228px;
+    height: 38px;
+    padding: 7px;
+    background: white;
+    border: 1px solid black;
+}
+
+.group-form {
+    display: flex;
+    width: 242px;
+    height: 52px;
+}
+
+.group-form .form-element {
+    width: 65%;
+}
+
+.group-form .dropdown {
+    width: 100% !important;
+    text-align: center;
+    line-height: 50px;
+}
+
+.group-form .dropdown .dropdown-toggle {
+    width: 100% !important;
+    height: 52px !important;
+    border: 1px solid black;
+    font-size: 12px;
+    cursor: pointer;
+    background: white;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown .dropdown-toggle {
+    align-self: center;
+}
+
+.dropdown .dropdown-toggle::after {
+    content: "  \2193";
+    font-size: 14px;
+}
+
+.dropdown-menu {
+    list-style-type: none;
+    width: 100%;
+    z-index: 10;
+}
+
+.dropdown-menu .dropdown-item {
+    width: 100%;
+    height: 52px !important;
+    border: 1px solid black;
+    background: white;
+    font-size: 12px;
+}
+
+.is-valide {
+    border: 1px solid #33C4A0;
+}
+
+.is-invalide {
+    border: 1px solid #FF5A5F;
+}
+
+.form-element label {
+    font-size: 12px;
+}
+
+.result-button {
+    width: 172px;
+    height: 52px;
+    background: #33C4A0;
+    cursor: pointer;
+    color: white;
+    vertical-align: middle;
+}
+
+.result-row {
+    border-top: 1px solid black;
+}
+
+.grand-total::before {
+    content: "₽";
+}
+
+.grand-total {
+    font-size: 40px;
+    font-weight: 700;
+}
